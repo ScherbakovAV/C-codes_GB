@@ -5,12 +5,20 @@
 Console.Write("Enter a number...");
 int EndNumber = Convert.ToInt32(Console.ReadLine());
 int StartNumber = 1;
-while (StartNumber <= EndNumber)
+if (EndNumber > 0)
 {
-    if (StartNumber % 2 == 0)
+    Console.WriteLine("Even numbers from zero to entered number is:");
+    while (StartNumber <= EndNumber)
     {
-        Console.Write(StartNumber + " ");
-        // Console.Write ($"{StartNumber}, ");
+        if (StartNumber % 2 == 0)
+        {
+            Console.Write(StartNumber + " ");
+            // Console.Write ($"{StartNumber}, ");
+        }
+        ++StartNumber;
     }
-    ++StartNumber;
+}
+else
+{
+    Console.WriteLine("Wrong number");
 }

@@ -22,3 +22,22 @@ else
 {
     Console.WriteLine("Wrong number");
 }
+
+// Решение учителя
+
+// Console.Write("Enter a number...");
+// int EndNumber = Convert.ToInt32(Console.ReadLine());
+
+// 1 вариант:
+
+// for (int i = 2; i <= EndNumber; i +=2)
+// {
+//     Console.Write(i + " ")
+// }
+
+// 2 вариант:
+
+// for (int i = 1; i <= EndNumber; ++ш)
+// {
+//     if (i % 2 == 0) Console.Write(i + " ")
+// }

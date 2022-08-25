@@ -25,3 +25,19 @@ static int MaxNumber() // статический метод
 }
 
     Console.WriteLine("Максимальная цифра этого числа - "+MaxNumber());
+
+// Второй вариант решения:
+// static void MaxNumber2()
+//         {
+//             int number = new Random().Next(10, 100);
+//             int number1 = number % 10;
+//             int number2 = number / 10;
+
+//             int max = number1;
+
+//             if (number1 < number2)
+//             {
+//                 max = number2;
+//             }
+//             System.Console.WriteLine($"Number {number} Max {max}");
+//         }

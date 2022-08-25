@@ -31,3 +31,28 @@ else
         Console.WriteLine("remainder of the division is "+(Number1 % Number2));
     }
 }
+
+// Ренеие учителя:
+// static void SecondNumberMultipleFirst()
+// {
+//     System.Console.Write("Enter number1: ");
+//     int number1 = int.Parse(Console.ReadLine());
+
+//     System.Console.Write("Enter number2: ");
+//     int number2 = int.Parse(Console.ReadLine());
+
+//     if (number1 > number2)
+//     {
+//         if (number1 % number2 == 0)
+//             System.Console.WriteLine($"Число {number2} кратное {number1}  ");
+//         else
+//             System.Console.WriteLine($"Число {number2} не кратное {number1}  остататок {number1 % number2}");
+
+//         int number = 0;
+
+//     }
+//     else
+//     {
+//         System.Console.WriteLine($"Число {number2} больше {number1}  ");
+//     }
+// }

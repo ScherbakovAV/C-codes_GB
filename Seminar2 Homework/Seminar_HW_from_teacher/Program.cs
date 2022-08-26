@@ -15,10 +15,10 @@ namespace SeminarHW2
 
             //Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
             System.Console.Write("Введите число: ");
-            num = int.Parse(Console.ReadLine());
+            num = int.Parse(Console.ReadLine()!);
 
             System.Console.Write("Введите индекс: ");
-            int numIndex = int.Parse(Console.ReadLine());
+            int numIndex = int.Parse(Console.ReadLine()!);
 
             ViewaThirdNumber1(num, numIndex);
             //
@@ -26,7 +26,7 @@ namespace SeminarHW2
             //Задача 15: Дано число обозначающее день недели. Выяснить является номер дня недели выходным
 
             System.Console.Write("Введите день недели: ");
-            int dayWeek = int.Parse(Console.ReadLine());
+            int dayWeek = int.Parse(Console.ReadLine()!);
 
             DayOffWeek(dayWeek);
 

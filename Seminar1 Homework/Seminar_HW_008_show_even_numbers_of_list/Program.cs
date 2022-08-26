@@ -2,9 +2,24 @@
 // 5 -> 2, 4
 // 8 -> 2, 4, 6, 8
 
-Console.Write("Enter a number...");
-int EndNumber = Convert.ToInt32(Console.ReadLine());
+int EndNumber;
 int StartNumber = 1;
+
+do
+{
+    try
+    {
+        Console.Write("Enter a number... ");
+        EndNumber = Convert.ToInt32(Console.ReadLine());
+        break;          
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("Wrong format");
+    }
+}
+while(true);
+
 if (EndNumber > 0)
 {
     Console.WriteLine("Even numbers from zero to entered number is:");
@@ -20,7 +35,7 @@ if (EndNumber > 0)
 }
 else
 {
-    Console.WriteLine("Wrong number");
+    Console.WriteLine("The number is negative, program shutdown");
 }
 
 // Решение учителя
@@ -37,7 +52,7 @@ else
 
 // 2 вариант:
 
-// for (int i = 1; i <= EndNumber; ++ш)
+// for (int i = 1; i <= EndNumber; ++i)
 // {
 //     if (i % 2 == 0) Console.Write(i + " ")
 // }

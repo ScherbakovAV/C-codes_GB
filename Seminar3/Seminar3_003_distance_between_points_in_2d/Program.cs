@@ -39,3 +39,9 @@ Console.WriteLine("Расстояние между двумя точками р�
 // // Console.WriteLine("длинна отрезка"+result);
 
 // Console.WriteLine($"A ({x1},{y1}); B ({x2},{y2}) -> {result}");
+
+
+// double GetDistance(int x1, int y1, int x2, int y2)
+// {
+//     return Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
+// }

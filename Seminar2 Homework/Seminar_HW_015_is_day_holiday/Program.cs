@@ -21,3 +21,26 @@ else
 {
     Console.Write("Wrong number...");
 }
+
+
+// Через метод boolean
+//
+// bool IsWeekend(int number)
+// {
+//     if (number >7 || number < 1)
+//     {
+//         return false;
+//     }
+//     if (number > 5)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+
+// Console.Write("Введите число...");
+// int number = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine(IsWeekend(number));

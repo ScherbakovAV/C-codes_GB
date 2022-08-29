@@ -6,24 +6,24 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-// int Number = new Random().Next(-1000000, 1000000);
+int Number = new Random().Next(-1000000, 1000000);
 
-// Console.WriteLine("Your random number is "+Number);
+Console.WriteLine("Your random number is " + Number);
 
-// if (Number >= 100)
-// {
-//     Console.WriteLine("Third digit of this number is "+Convert.ToString(Number)[2]);
-// }
+if (Number >= 100)
+{
+    Console.WriteLine("Third digit of this number is "+Convert.ToString(Number)[2]);
+}
 
-// else if (Number <= -100)
-// {
-//     Console.WriteLine("Third digit of this number is "+Convert.ToString(Number)[3]);
-// }
+else if (Number <= -100)
+{
+    Console.WriteLine("Third digit of this number is "+Convert.ToString(Number)[3]);
+}
 
-// else
-// {
-//     Console.WriteLine($"There is no third digit in this number");
-// }
+else
+{
+    Console.WriteLine($"There is no third digit in this number");
+}
 
 
 // ___Решение через метод___

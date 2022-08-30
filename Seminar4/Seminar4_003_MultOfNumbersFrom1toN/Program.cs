@@ -5,7 +5,7 @@
 // 5 -> 120
 
 System.Console.WriteLine("Enter a number");
-int number = int.Parse(Console.ReadLine());
+int number = int.Parse(Console.ReadLine()!);
 int mult = 1;
 
 for(int i = 1; i <= number; i++)

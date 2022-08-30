@@ -46,8 +46,7 @@ char[] TextToArray()
     string arrText = Console.ReadLine()!;
 
     arrText = arrText.ToLower().Replace(" ", "");
-    System.Console.WriteLine(arrText);
-
+    
     char[] array = arrText.ToCharArray();
 
     return array;
@@ -90,7 +89,6 @@ System.Console.WriteLine(ArrayCheckForPalindrome(arrayText));
 //     string Text = Console.ReadLine()!;
 
 //     Text = Text.ToLower().Replace(" ", "");
-//     System.Console.WriteLine(Text);
 
 //     int check = 0;
 

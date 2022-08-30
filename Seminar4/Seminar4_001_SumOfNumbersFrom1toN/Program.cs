@@ -6,7 +6,7 @@
 // 8 -> 36
 
 System.Console.WriteLine("Enter a number");
-int number = int.Parse(Console.ReadLine());
+int number = int.Parse(Console.ReadLine()!);
 int summ = 0;
 
 for(int i = 1; i <= number; i++)

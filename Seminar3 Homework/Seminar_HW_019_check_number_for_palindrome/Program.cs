@@ -5,7 +5,8 @@
 // 23432 -> да
 // 12821 -> 
 
-// Отправленное на проверку:
+// _____________________________________________________________
+// 1. Отправленное на проверку:
 
 // int[] array = {0, 0, 0, 0, 0};
 
@@ -35,40 +36,77 @@
 //     Console.WriteLine("This number is normal");
 // }
 
+// _____________________________________________________________
 
-void NumberCheckForPalindrome()
+// 2. Решение двумя методами через массив для любой длины строки с заданием массива циклом 
+
+char[] TextToArray()
 {
-    Console.WriteLine("Enter a number to check for a palindrome... ");
+    Console.WriteLine("Enter a text or a number... ");
     string arrText = Console.ReadLine()!;
 
-    int arrLenght = arrText.Length;
-    int[] array = new int[arrLenght];
+    arrText = arrText.ToLower().Replace(" ", "");
+    System.Console.WriteLine(arrText);
 
-    
-    // Console.WriteLine("Your array is: ");
+    char[] array = arrText.ToCharArray();
 
-    for(int j = 0; j < arrLenght; j++)
-    {
-        array[j] = Convert.ToInt32(arrText[j]);
-    // Console.Write($"{array[j]} "); // для проверки
-    // System.Console.WriteLine("");
-    }
+    return array;
+}
 
+string ArrayCheckForPalindrome(char[] array)
+{
     int check = 0;
 
-    for (int i = 0; i < arrLenght / 2; i++)
+    for (int i = 0; i < array.Length / 2; i++)
     {
-        if (array[i] == array[arrLenght - 1 - i]) check++;
+        if (array[i] == array[array.Length - 1 - i]) check++;
     }
-  
-    if (check == arrLenght / 2)
+
+    string result;
+
+    if (check == array.Length / 2)
     {
-        System.Console.WriteLine("This number is a palindrome");
+        result = "This is a palindrome";
     }
     else
     {
-        System.Console.WriteLine("It is NOT a palindrome!");
+        result = "This is NOT a palindrome!";
     }
+
+    return result;
 }
 
-NumberCheckForPalindrome();
+char[] arrayText = TextToArray();
+
+System.Console.WriteLine(ArrayCheckForPalindrome(arrayText));
+
+// _____________________________________________________________
+
+// 3. Решение методом через через строку
+
+// void StrCheckForPalindrome()
+// {
+//     Console.WriteLine("Enter a text or a number... ");
+//     string Text = Console.ReadLine()!;
+
+//     Text = Text.ToLower().Replace(" ", "");
+//     System.Console.WriteLine(Text);
+
+//     int check = 0;
+
+//     for (int i = 0; i < Text.Length / 2; i++)
+//     {
+//         if (Text[i] == Text[Text.Length - 1 - i]) check++;
+//     }
+
+//     if (check == Text.Length / 2)
+//     {
+//         System.Console.WriteLine("This is a palindrome");
+//     }
+//     else
+//     {
+//         System.Console.WriteLine("This is NOT a palindrome!");
+//     }
+// }
+
+// StrCheckForPalindrome();

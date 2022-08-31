@@ -8,40 +8,26 @@ double NumberAToPowerB()
     double numberA;
     double numberB;
 
-    Console.WriteLine("Enter number A...");
-
     do
     {
         try    
         {
-            numberA = Double.Parse(Console.ReadLine()!);
+            Console.WriteLine("Enter number A...");
+            numberA = Convert.ToDouble(Console.ReadLine());
+            
+            Console.WriteLine("Enter number B...");
+            numberB = Convert.ToDouble(Console.ReadLine());
             break;
         }
 
         catch (FormatException)
         {
-            Console.Write("Wrong format! Enter a correct number A...");;
+            Console.WriteLine($"Wrong format! Enter a correct numbers!\nTry again...");
+            Console.WriteLine("");
         }
     }
     while(true);
 
-    Console.WriteLine("Enter number B...");
-
-    do
-    {
-        try    
-        {
-            numberB = Double.Parse(Console.ReadLine()!);
-            break;
-        }
-
-        catch (FormatException)
-        {
-            Console.Write("Wrong format! Enter a correct number B...");;
-        }
-    }
-    while(true);
-    
     double powA = Math.Pow(numberA, numberB);
 
     Console.Write($"{numberA} to the power of {numberB} is ");

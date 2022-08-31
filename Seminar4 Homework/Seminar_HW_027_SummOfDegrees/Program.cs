@@ -4,13 +4,14 @@
 // 82 -> 10
 // 9012 -> 12
 
-int SummOfDigitsInNumber(string num)
+int SummOfDigitsInNumber(int num)
 {
     int summ = 0;
 
-    for (int i = 0; i < num.Length; i++)
+    for (int i = 0; num > 0; i++)
     {
-        summ = summ + Convert.ToInt32(Char.GetNumericValue(num[i]));
+        summ += num % 10;
+        num = num / 10;
     }
     
     return summ;
@@ -18,6 +19,27 @@ int SummOfDigitsInNumber(string num)
 
 Console.WriteLine("Enter a string number");
 
-int summ = SummOfDigitsInNumber(Console.ReadLine()!);
+int number = SummOfDigitsInNumber(Convert.ToInt32(Console.ReadLine()));
 
-Console.WriteLine($"Summ of digits of this number is {summ}");
+Console.WriteLine($"Summ of digits of this number is {number}");
+
+
+// Второй вариант, через строку.
+
+// int SummOfDigitsInNumber(string num)
+// {
+//     int summ = 0;
+
+//     for (int i = 0; i < num.Length; i++)
+//     {
+//         summ = summ + Convert.ToInt32(Char.GetNumericValue(num[i]));
+//     }
+    
+//     return summ;
+// }
+
+// Console.WriteLine("Enter a string number");
+
+// int summ = SummOfDigitsInNumber(Console.ReadLine()!);
+
+// Console.WriteLine($"Summ of digits of this number is {summ}");

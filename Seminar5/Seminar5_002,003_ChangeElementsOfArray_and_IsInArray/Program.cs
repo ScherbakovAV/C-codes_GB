@@ -55,3 +55,26 @@ ChangeElements(EnterRandomArray());
 
 Console.WriteLine(IsInArray(EnterRandomArray()));
 
+
+// // _______________________________________________________
+// // Решение Маргариты
+// void NumberSearch()
+// {
+
+// int number = new Random().Next(1,17);
+
+// int num = new Random().Next(17);
+// int[] array = new int[num];
+
+// bool search = false;
+
+// for(int i=0;i < array.Length; i++)
+// {
+//     array[i]=new Random().Next(17);
+//     if(number == array[i])
+//     search = true;
+// }
+// Console.WriteLine($"{number}; array [{string.Join(",",array)}]->{(search?"да":"нет")}");
+// }
+
+// NumberSearch();

@@ -40,44 +40,44 @@
 
 // 2. Решение двумя методами через массив для любой длины строки с заданием массива циклом 
 
-// char[] TextToArray()
-// {
-//     Console.WriteLine("Enter a text or a number... ");
-//     string arrText = Console.ReadLine()!;
+char[] TextToArray()
+{
+    Console.WriteLine("Enter a text or a number... ");
+    string arrText = Console.ReadLine()!;
 
-//     arrText = arrText.ToLower().Replace(" ", "");
+    arrText = arrText.ToLower().Replace(" ", "");
     
-//     char[] array = arrText.ToCharArray();
+    char[] array = arrText.ToCharArray();
 
-//     return array;
-// }
+    return array;
+}
 
-// string ArrayCheckForPalindrome(char[] array)
-// {
-//     int check = 0;
+string ArrayCheckForPalindrome(char[] array)
+{
+    int check = 0;
 
-//     for (int i = 0; i < array.Length / 2; i++)
-//     {
-//         if (array[i] == array[array.Length - 1 - i]) check++;
-//     }
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        if (array[i] == array[array.Length - 1 - i]) check++;
+    }
 
-//     string result;
+    string result;
 
-//     if (check == array.Length / 2)
-//     {
-//         result = "This is a palindrome";
-//     }
-//     else
-//     {
-//         result = "This is NOT a palindrome!";
-//     }
+    if (check == array.Length / 2)
+    {
+        result = "This is a palindrome";
+    }
+    else
+    {
+        result = "This is NOT a palindrome!";
+    }
 
-//     return result;
-// }
+    return result;
+}
 
-// char[] arrayText = TextToArray();
+char[] arrayText = TextToArray();
 
-// System.Console.WriteLine(ArrayCheckForPalindrome(arrayText));
+System.Console.WriteLine(ArrayCheckForPalindrome(arrayText));
 
 // _____________________________________________________________
 
@@ -140,67 +140,3 @@
 // }
 
 // System.Console.WriteLine(IsPalindrome(12121));
-
-bool IsPalindrome2(int num)
-{
-    int length = (Convert.ToString(num)).Length;
-
-    int[] arr = new int[length];
-    
-    for (int i = 0; i < length; i++)
-    {
-        arr[i] = num / Convert.ToInt32(Math.Pow(10, length - 1 - i));
-        num -= arr[i] * Convert.ToInt32(Math.Pow(10, length - i));
-        Console.Write($"{arr[i]} "); // удалить потом
-    }
-
-    arr[length - 1] = num % 10;
-
-    int check = 0;
-
-    for (int j = 0; j < length / 2; j++)
-    {
-        if (arr[j] == arr[length - 1 - j]) check++;
-    }
-
-    if (check == length / 2)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-System.Console.WriteLine(IsPalindrome2(1234321));
-System.Console.WriteLine(1234321 / Math.Pow(10, 6)); // удалить
-
-// от Наташи:
-
-void IfPallindrome2(long num)
-{
-    int i = 0;
-    while  (num != 0)
-    {
-        num = num/10;
-        
-        i++;
-    }
-        
-    System.Console.WriteLine(i);
-
-
-    for (int j = 0; j < i/2; j++)
-    {
-        if(num/(Math.Pow(10, i-1-j)) != num%(Math.Pow(10, j+1)))
-    System.Console.WriteLine("-");
-    
-    else
-    {
-        System.Console.WriteLine('+');
-    }
-    }
-    
-}
-IfPallindrome2(1245245);

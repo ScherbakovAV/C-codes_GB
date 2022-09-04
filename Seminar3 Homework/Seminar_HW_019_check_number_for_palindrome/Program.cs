@@ -54,22 +54,13 @@ char[] TextToArray()
 
 string ArrayCheckForPalindrome(char[] array)
 {
-    int check = 0;
+    string result = String.Empty;
 
     for (int i = 0; i < array.Length / 2; i++)
     {
-        if (array[i] == array[array.Length - 1 - i]) check++;
-    }
+        if (array[i] == array[array.Length - 1 - i]) result = "This is a palindrome";
 
-    string result;
-
-    if (check == array.Length / 2)
-    {
-        result = "This is a palindrome";
-    }
-    else
-    {
-        result = "This is NOT a palindrome!";
+        else result = "This is NOT a palindrome!";
     }
 
     return result;

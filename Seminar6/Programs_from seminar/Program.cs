@@ -121,6 +121,24 @@ return arr;
 }
 */
 
+// // Решение группы 3001 через рекурсию
+
+// System.Console.WriteLine("Введите число");
+// int number = Convert.ToInt32(Console.ReadLine());
+
+// PrintBinaryView(number);
+// void PrintBinaryView(int decNumber)
+// {
+//     if (decNumber <= 0) return;
+
+//     else
+//     {
+//         PrintBinaryView(decNumber / 2);
+//         System.Console.Write(decNumber % 2);
+//     }
+// }
+
+
 
 
 // Задача 44: Не используя рекурсию, выведите первые N чисел
@@ -152,37 +170,51 @@ return arr;
 // System.Console.WriteLine(String.Join(", ", ArrayFibonacci()));
 
 
+// Решение группы 3001
+
+// int f1 = 0, f2 = 1, sum = 0, n = 15;
+
+// Console.Write("0 1 ");
+
+// for (int i = 2; i < n; i++)
+// {
+//     sum = f1 + f2;
+//     Console.Write($"{sum} ");
+//     f1 = f2;
+//     f2 = sum;
+// }
+
 
 // Задача 45: Напишите программу, которая будет создавать
 // копию заданного массива с помощью поэлементного копирования.
 
-int[] GetArray(int sizeArray)
-{
-    int[] array = new int[sizeArray];
+// int[] GetArray(int sizeArray)
+// {
+//     int[] array = new int[sizeArray];
 
-    for (int i = 0; i < sizeArray; i++) array[i] = new Random().Next(1, 100);
+//     for (int i = 0; i < sizeArray; i++) array[i] = new Random().Next(1, 100);
 
-    Console.WriteLine($"Your random array is:\n{String.Join(", ", array)}");
+//     Console.WriteLine($"Your random array is:\n{String.Join(", ", array)}");
 
-    return array;
-}
+//     return array;
+// }
 
-int[] CopyofArray(int[] arr)
-{
-    int[] copyArr = new int[arr.Length];
+// int[] CopyofArray(int[] arr)
+// {
+//     int[] copyArr = new int[arr.Length];
 
-    for (int i = 0; i < arr.Length; i++)
-    {
-        copyArr[i] = arr[i];  
-    }
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         copyArr[i] = arr[i];  
+//     }
 
-    return copyArr;
-}
+//     return copyArr;
+// }
 
-System.Console.WriteLine("Enter a size of array...");
-int size = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Enter a size of array...");
+// int size = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"Copy of this array is:\n{String.Join(", ", CopyofArray(GetArray(size)))}");
+// Console.WriteLine($"Copy of this array is:\n{String.Join(", ", CopyofArray(GetArray(size)))}");
 
 
 // Решение другой группы

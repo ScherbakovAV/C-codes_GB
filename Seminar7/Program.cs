@@ -112,6 +112,14 @@ int SumArrayDiagonal(int[,] array) // Task 51
             if (i == j) sumDiagonal += array[i, j];
         }
     }
+
+    // группа 3001
+
+    // for (int i = 0; i < array.GetLength(0); i++)
+    // {
+    //     sumDiagonal += array[i, i];
+    // }
+
     return sumDiagonal;
 }
 

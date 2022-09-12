@@ -36,7 +36,7 @@ void Start()
             case 37:
 
                 Console.Write("Введите элементы массива через пробел: ");
-                string elements = Console.ReadLine();
+                string elements = Console.ReadLine()!;
                 int[] baseArray = GetArrayFromString(elements);
                 Console.WriteLine(String.Join(" ", ResultArray(baseArray)));
 

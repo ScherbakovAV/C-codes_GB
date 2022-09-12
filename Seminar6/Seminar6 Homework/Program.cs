@@ -38,7 +38,13 @@ int[] ArrayFromUserConvertString()
 
     int[] arrayFromString = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
 
-    // решение группы 3001:
+    // __решение учителя__:
+    // string str = Console.ReadLine();
+    // var arrStr = str.Split(" ");
+    // int[] arr = Array.ConvertAll(arrStr, int.Parse); // это не лучший вариант, программа нестабильна
+                                                        // при этом лучше использовать TryParse
+
+    // __решение группы 3001__:
     // string[] nums = stringArray.Split(' ');
     // int[] arrayFromString = new int[nums.Length];
     // for (int i = 0; i < arrayFromString.Length; i++)

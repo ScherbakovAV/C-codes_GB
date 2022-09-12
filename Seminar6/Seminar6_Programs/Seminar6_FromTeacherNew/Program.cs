@@ -1,7 +1,7 @@
 ﻿// Задача №41//
 
 Console.Write("Enter the elements separated by a space: ");
-int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+int[] arr = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
 int count = 0;
  
 for (int i = 0; i < arr.Length; i++)
@@ -41,7 +41,7 @@ Console.WriteLine($"The point of intersection of two straight lines X: {x}; Y: {
 Console.Clear();
 Console.Write("Введите стороны треугольника через пробел: ");
 
-string[] st=Console.ReadLine().Split(' ',StringSplitOptions.RemoveEmptyEntries);
+string[] st=Console.ReadLine()!.Split(' ',StringSplitOptions.RemoveEmptyEntries);
 
 if(IsTriangle(int.Parse(st[0]),int.Parse(st[1]),int.Parse(st[2])))
 {
@@ -65,7 +65,7 @@ bool IsTriangle(int a,int b,int c)
 //которая будет преобразовывать десятичное число в двоичное.
 
 Console.Clear();
-int number=int.Parse(Console.ReadLine());
+int number=int.Parse(Console.ReadLine()!);
 
 string res1=Convert.ToString(number,2);
 string res2=DecToNum(number,2);
@@ -88,20 +88,20 @@ string DecToNum(int decNumber, int otherSystem)
     return res;
 }
 //Универсальный математический для перевода из 10 в двоичную
-bool[] DecToNum2 (int num)
-{
+// bool[] DecToNum2 (int num)
+// {
 
-int result = 0;
-bool[] arr = new bool[32];
-int i;
-for (i = 0; num > 0; i++)
-{
-    result = num%2;
-    num = num/2;
-    arr[arr.Length -1 -i] = Convert.ToBoolean(result);
-}
-return arr;
-}
+// int result = 0;
+// bool[] arr = new bool[32];
+// int i;
+// for (i = 0; num > 0; i++)
+// {
+//     result = num%2;
+//     num = num/2;
+//     arr[arr.Length -1 -i] = Convert.ToBoolean(result);
+// }
+// return arr;
+// }
 // Задача 45: Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования.
 
 Console.Clear();

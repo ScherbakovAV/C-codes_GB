@@ -45,12 +45,12 @@ int[] InversArray(int[] array)
 // -3; массив [6, 7, 19, 345, 3] -> да
 
 Console.Write("Введите элементы массива через пробел: ");
-string elements = Console.ReadLine();
+string elements = Console.ReadLine()!;
 
 int[] baseArray = GetArrayFromString(elements);
 
 Console.Write("Введите число: ");
-int n = int.Parse(Console.ReadLine());
+int n = int.Parse(Console.ReadLine()!);
 
 if (FindElement(baseArray, n))
 {
@@ -102,24 +102,24 @@ int[] GetArrayFromString(string stringArray)
     return res;
 }
 
-int[] ResultArray(int[] array)
-{
-    int size = array.Length / 2;
+// int[] ResultArray(int[] array)
+// {
+//     int size = array.Length / 2;
 
-    if (array.Length % 2 == 1) size++;
+//     if (array.Length % 2 == 1) size++;
 
-    int[] result = new int[size];
+//     int[] result = new int[size];
 
-    for (int i = 0; i < array.Length / 2; i++)
-    {
+//     for (int i = 0; i < array.Length / 2; i++)
+//     {
 
-        result[i] = array[i] * array[array.Length - 1 - i];
-    }
+//         result[i] = array[i] * array[array.Length - 1 - i];
+//     }
 
-    if (array.Length % 2 == 1) result[size - 1] = array[array.Length / 2];
+//     if (array.Length % 2 == 1) result[size - 1] = array[array.Length / 2];
 
-    return result;
-}
+//     return result;
+// }
 
 int GetCountElements(int[] array, int leftRange, int rigthRange)
 {

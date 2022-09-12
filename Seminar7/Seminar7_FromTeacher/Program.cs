@@ -5,10 +5,10 @@
 Console.Clear();
 
 Console.Write("Введите количество строк массива: ");
-int rows=int.Parse(Console.ReadLine());
+int rows=int.Parse(Console.ReadLine()!);
 
 Console.Write("Введите количество столбцов массива: ");
-int columns=int.Parse(Console.ReadLine());
+int columns=int.Parse(Console.ReadLine()!);
 
 int[,] array = GetArraySum(rows, columns);
 PrintArray(array);
@@ -31,10 +31,10 @@ int[,] GetArraySum(int m, int n)
 Console.Clear();
 
 Console.Write("Введите количество строк массива: ");
- rows=int.Parse(Console.ReadLine());
+ rows=int.Parse(Console.ReadLine()!);
 
 Console.Write("Введите количество столбцов массива: ");
- columns=int.Parse(Console.ReadLine());
+ columns=int.Parse(Console.ReadLine()!);
 
  array = GetArrayDouble(rows, columns,0,10);
 PrintArray(array);
@@ -62,10 +62,10 @@ int[,] ChangeArray(int[,] array)
 Console.Clear();
 
 Console.Write("Введите количество строк массива: ");
- rows=int.Parse(Console.ReadLine());
+ rows=int.Parse(Console.ReadLine()!);
 
 Console.Write("Введите количество столбцов массива: ");
- columns=int.Parse(Console.ReadLine());
+ columns=int.Parse(Console.ReadLine()!);
 
  array = GetArrayDouble(rows, columns,0,10);
 PrintArray(array);
@@ -90,10 +90,10 @@ int GetSumDiag(int[,] array)
 Console.Clear();
 
 Console.Write("Введите количество строк массива: ");
- rows = int.Parse(Console.ReadLine());
+ rows = int.Parse(Console.ReadLine()!);
 
 Console.Write("Введите количество столбцов массива: ");
- columns = int.Parse(Console.ReadLine());
+ columns = int.Parse(Console.ReadLine()!);
 
 array = GetArrayDouble(rows, columns, 0, 10);
 PrintArray(array);

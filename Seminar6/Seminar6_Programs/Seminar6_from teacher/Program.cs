@@ -1,3 +1,4 @@
+//S6
 using System;
 
 class Program

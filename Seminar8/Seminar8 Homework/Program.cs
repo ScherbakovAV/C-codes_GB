@@ -1,27 +1,29 @@
 ﻿Console.Clear();
 
-// int rows = EnterNumber("Введите число строк массива по умолчанию");
-// int columns = EnterNumber("Введите число столбцов массива по умолчанию");
-// int minOfArray = EnterNumber("Введите минимальное число массива по умолчанию");
-// int maxOfArray = EnterNumber("Введите максимальное число массива по умолчанию");
+int rows = EnterIntNumber("Введите число строк массива по умолчанию");
+int columns = EnterIntNumber("Введите число столбцов массива по умолчанию");
+int minOfArray = EnterIntNumber("Введите минимальное число массива по умолчанию");
+int maxOfArray = EnterIntNumber("Введите максимальное число массива по умолчанию");
 
-int rows = 2;
+/* int rows = 2;
 int columns = 3;
 int minOfArray = 1;
-int maxOfArray = 9;
+int maxOfArray = 9; */
 
-// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию
-// элементы каждой строки двумерного массива.
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// В итоге получается вот такой массив:
-// 7 4 2 1
-// 9 5 3 2
-// 8 4 4 2
+/* Задача 54: Задайте двумерный массив. Напишите программу, которая
+упорядочит по убыванию элементы каждой строки двумерного массива.
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+В итоге получается вот такой массив:
+7 4 2 1
+9 5 3 2
+8 4 4 2 */
 
-System.Console.WriteLine($"\n<<<Задача 54: Упорядочение по убыванию элементов строк двумерного массива>>>\n");
+Console.Clear();
+
+System.Console.WriteLine($"\n<<<Задача 54: Упорядочение по убыванию элементов строк двумерного массива>>>");
 
 int[,] array1 = GetArray(rows, columns, minOfArray, maxOfArray);
 
@@ -35,35 +37,40 @@ PrintArray(array1);
 
 PressAKey();
 
-// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет
-// находить строку с наименьшей суммой элементов. Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// 5 2 6 7
-// Программа считает сумму элементов в каждой строке и выдаёт номер строки
-// с наименьшей суммой элементов: 1 строка
+/* Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет
+находить строку с наименьшей суммой элементов. Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+5 2 6 7
+Программа считает сумму элементов в каждой строке и выдаёт номер строки
+с наименьшей суммой элементов: 1 строка */
 
-System.Console.WriteLine($"\n<<<Задача 56: Нахождение строки с минимальной суммой элементов массива>>>\n");
+Console.Clear();
+
+System.Console.WriteLine($"\n<<<Задача 56: Нахождение строки с минимальной суммой элементов массива>>>");
 
 int[,] array2 = GetArray(rows, columns, minOfArray, maxOfArray);
 
 System.Console.WriteLine($"\nМассив №2:\n");
 PrintArray(array2);
+Console.WriteLine();
 
 FindMinSumOfArray(array2);
 
 PressAKey();
 
-// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-// Например, даны 2 матрицы:
-// 2 4 | 3 4
-// 3 2 | 3 3
-// Результирующая матрица будет:
-// 18 20
-// 15 18
+/* Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+Например, даны 2 матрицы:
+2 4 | 3 4
+3 2 | 3 3
+Результирующая матрица будет:
+18 20
+15 18 */
 
-System.Console.WriteLine($"\n<<<Задача 58: Нахождение произведения двух матриц (двумерных массивов)>>>\n");
+Console.Clear();
+
+System.Console.WriteLine($"\n<<<Задача 58: Нахождение произведения двух матриц (двумерных массивов)>>>");
 
 int[,] array3 = GetArray(rows, columns, minOfArray, maxOfArray);
 
@@ -72,8 +79,8 @@ PrintArray(array3);
 
 Console.WriteLine($"\nВнимание! Произведение двух матриц возможно только в том случае,");
 Console.WriteLine($"когда число столбцов матрицы 1 (в данный момент равное {array3.GetLength(1)}) совпадает с числом строк матрицы 2!\n");
-int rowsAnother = EnterNumber("Введите число строк второго массива");
-int columnsAnother = EnterNumber("Введите число столбцов второго массива");
+int rowsAnother = EnterIntNumber("Введите число строк второй матрицы");
+int columnsAnother = EnterIntNumber("Введите число столбцов второй матрицы");
 
 int[,] array4 = GetArray(rowsAnother, columnsAnother, minOfArray, maxOfArray);
 
@@ -94,31 +101,42 @@ else
 
 PressAKey();
 
-// Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел.
-// Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
-// Массив размером 2 x 2 x 2
-// 66(0,0,0) 25(0,1,0)
-// 34(1,0,0) 41(1,1,0)
-// 27(0,0,1) 90(0,1,1)
-// 26(1,0,1) 55(1,1,1)
+/* Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел.
+Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+Массив размером 2 x 2 x 2
+66(0,0,0) 25(0,1,0)
+34(1,0,0) 41(1,1,0)
+27(0,0,1) 90(0,1,1)
+26(1,0,1) 55(1,1,1) */
 
-int[,,] arr3D = GetArray3D();
+Console.Clear();
+
+System.Console.WriteLine($"\n<<<Задача 60: Вывод трёхмерного массива из неповторяющихся двузначных чисел>>>\n");
+
+int sizeA = EnterIntNumber("Введите размер массива x");
+int sizeB = EnterIntNumber("Введите размер массива y");
+int sizec = EnterIntNumber("Введите размер массива z");
+
+int[,,] arr3D = GetArray3D(x : sizeA, y : sizeB, z : sizec);
+Console.WriteLine($"\nВаш массив:\n");
 PrintArray3D(arr3D);
 
-// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
-// Например, на выходе получается вот такой массив:
-// 01 02 03 04
-// 12 13 14 05
-// 11 16 15 06
-// 10 09 08 07
+PressAKey();
 
-void PressAKey()
+/* Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+Например, на выходе получается вот такой массив:
+01 02 03 04
+12 13 14 05
+11 16 15 06
+10 09 08 07 */
+
+void PressAKey() // (запрос нажатия клавиши для продолжения)
 {
     Console.WriteLine($"\nНажмите любую клавишу для продолжения...\n");
     Console.ReadKey();
 }
 
-int EnterNumber(string text)
+int EnterIntNumber(string text) // (ввод и проверка целого числа)
 {
     Console.Write($"{text}...\n");
 
@@ -137,7 +155,7 @@ int EnterNumber(string text)
     }
 }
 
-int[,] GetArray(int rows = 4, int columns = 4, int numMin = 1, int numMax = 9)
+int[,] GetArray(int rows = 5, int columns = 3, int numMin = 1, int numMax = 9) // (задание 2D массива)
 {
     int[,] newArray = new int[rows, columns];
     var rand = new Random();
@@ -153,10 +171,29 @@ int[,] GetArray(int rows = 4, int columns = 4, int numMin = 1, int numMax = 9)
     return newArray;
 }
 
-int[,,] GetArray3D(int x = 3, int y = 3, int z = 3, int numMin = 1, int numMax = 30) // 60
+int[,,] GetArray3D(int x = 4, int y = 4, int z = 4) // 60 (задание 3D массива с неповторяющимися двузначными числами)
 {
+    int numMin = 10;
+    int numMax = numMin + x * y * z - 1;
     int[,,] newArray3D = new int[x, y, z];
+    int[] arrValues = new int[x * y * z];
     var rand = new Random();
+
+    for (int i = 0; i < arrValues.Length; ++i)
+    {
+        bool isUnique;
+        do
+        {
+            arrValues[i] = rand.Next(numMin, numMax + 1);
+            isUnique = true;
+            for (int j = 0; j < i; ++j)
+                if (arrValues[i] == arrValues[j])
+                {
+                    isUnique = false;
+                    break;
+                }
+        } while (!isUnique);
+    }
 
     for (int i = 0; i < x; i++)
     {
@@ -164,28 +201,9 @@ int[,,] GetArray3D(int x = 3, int y = 3, int z = 3, int numMin = 1, int numMax =
         {
             for (int k = 0; k < z; k++)
             {
-                newArray3D[i, j, k] = rand.Next(numMin, numMax + 1);
-
-                for (int l = 0; l < i; l++)
-                {
-                    for (int m = 0; m < j; m++)
-                    {
-                        for (int n = 0; n < k; n++)
-                        {
-                            while (true)
-                            {
-                                if ((newArray3D[i, j, k] != newArray3D[l, j, k]) && (newArray3D[i, j, k] != newArray3D[i, m, k]) && (newArray3D[i, j, k] != newArray3D[i, j, n]))
-                                {
-                                    break;
-                                }
-                                else newArray3D[i, j, k] = rand.Next(numMin, numMax + 1);
-                            }
-                        }
-                    }
-                    
-                }
+                newArray3D[i, j, k] = arrValues[i * newArray3D.GetLength(1)*newArray3D.GetLength(2)
+                                     + j *newArray3D.GetLength(2) + k];
             }
-
         }
     }
 
@@ -193,7 +211,7 @@ int[,,] GetArray3D(int x = 3, int y = 3, int z = 3, int numMin = 1, int numMax =
 }
 
 
-void PrintArray(int[,] array)
+void PrintArray(int[,] array) // (печать массива)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -205,7 +223,7 @@ void PrintArray(int[,] array)
     }
 }
 
-void PrintArray3D(int[,,] array) // 60
+void PrintArray3D(int[,,] array) // 60 (печать трёхмерного массива)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -221,7 +239,7 @@ void PrintArray3D(int[,,] array) // 60
     }
 }
 
-int[,] SortRowsOfArray(int[,] arr) // 54
+int[,] SortRowsOfArray(int[,] arr) // 54 (сортировка элементов в строках 2D массива)
 {
     int temp;
 
@@ -246,7 +264,7 @@ int[,] SortRowsOfArray(int[,] arr) // 54
     return arr;
 }
 
-void FindMinSumOfArray(int[,] arr) // 56
+void FindMinSumOfArray(int[,] arr) // 56 (нахождение строки в 2D массиве с минимальной суммой)
 {
     int[] arrSumOfRow = new int[arr.GetLength(0)];
 
@@ -275,7 +293,7 @@ void FindMinSumOfArray(int[,] arr) // 56
     Console.WriteLine($"\nСтрока массива с наименьшей суммой элементов ({minSum}) - № {indexOfMinRow + 1}\n");
 }
 
-int[,] MultiplicationArray(int[,] arrFirst, int[,] arrSecond) // 58
+int[,] MultiplicationArray(int[,] arrFirst, int[,] arrSecond) // 58 (умножение матриц)
 {
     int[,] arrResult = new int[arrFirst.GetLength(0), arrSecond.GetLength(1)];
 
@@ -299,8 +317,3 @@ int[,] MultiplicationArray(int[,] arrFirst, int[,] arrSecond) // 58
         return null!;
     }
 }
-
-// Проверка
-// int[,] arrTest1 = {{2, 4}, {3, 2}};
-// int[,] arrTest2 = {{3, 4}, {3, 3}};
-// PrintArray(MultiplicationArray(arrTest1, arrTest2));

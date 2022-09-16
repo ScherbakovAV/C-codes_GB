@@ -1,7 +1,7 @@
 ﻿Console.Clear();
 
-int rows = EnterIntNumber("Введите число строк массива по умолчанию");
-int columns = EnterIntNumber("Введите число столбцов массива по умолчанию");
+int rows = EnterPositiveIntNumber("Введите число строк массива по умолчанию");
+int columns = EnterPositiveIntNumber("Введите число столбцов массива по умолчанию");
 int minOfArray = EnterIntNumber("Введите минимальное число массива по умолчанию");
 int maxOfArray = EnterIntNumber("Введите максимальное число массива по умолчанию");
 
@@ -79,8 +79,8 @@ PrintArray(array3);
 
 Console.WriteLine($"\nВнимание! Произведение двух матриц возможно только в том случае,");
 Console.WriteLine($"когда число столбцов матрицы 1 (в данный момент равное {array3.GetLength(1)}) совпадает с числом строк матрицы 2!\n");
-int rowsAnother = EnterIntNumber("Введите число строк второй матрицы");
-int columnsAnother = EnterIntNumber("Введите число столбцов второй матрицы");
+int rowsAnother = EnterPositiveIntNumber("Введите число строк второй матрицы");
+int columnsAnother = EnterPositiveIntNumber("Введите число столбцов второй матрицы");
 
 int[,] array4 = GetArray(rowsAnother, columnsAnother, minOfArray, maxOfArray);
 
@@ -111,11 +111,11 @@ PressAKey();
 
 Console.Clear();
 
-System.Console.WriteLine($"\n<<<Задача 60: Вывод трёхмерного массива из неповторяющихся двузначных чисел>>>\n");
+Console.WriteLine($"\n<<<Задача 60: Вывод трёхмерного массива из неповторяющихся двузначных чисел>>>\n");
 
-int sizeA = EnterIntNumber("Введите размер массива x");
-int sizeB = EnterIntNumber("Введите размер массива y");
-int sizec = EnterIntNumber("Введите размер массива z");
+int sizeA = EnterPositiveIntNumber("Введите размер массива x");
+int sizeB = EnterPositiveIntNumber("Введите размер массива y");
+int sizec = EnterPositiveIntNumber("Введите размер массива z");
 
 int[,,] arr3D = GetArray3D(x : sizeA, y : sizeB, z : sizec);
 Console.WriteLine($"\nВаш массив:\n");
@@ -129,6 +129,17 @@ PressAKey();
 12 13 14 05
 11 16 15 06
 10 09 08 07 */
+
+Console.WriteLine($"\n<<<Задача 62: Спиральное заполнение массива размером n x n>>>\n");
+
+int sizeSpiral = EnterPositiveIntNumber("Введите размер квадратного массива");
+int[,] arrSpiral = GetSpiralArray(sizeSpiral);
+
+Console.WriteLine($"\nСпиральный массив:\n");
+PrintArray(arrSpiral);
+
+//_________________________________________________________________________________________________
+//_________________________________________________________________________________________________
 
 void PressAKey() // (запрос нажатия клавиши для продолжения)
 {
@@ -151,6 +162,30 @@ int EnterIntNumber(string text) // (ввод и проверка целого ч
         catch (FormatException)
         {
             Console.WriteLine($"Некорректный ввод. Введите целое число!\n");
+        }
+    }
+}
+
+int EnterPositiveIntNumber(string text) // (ввод и проверка целого положительного числа)
+{
+    Console.Write($"{text}...\n");
+
+    while (true)
+    {
+        try
+        {
+            link: int number = Convert.ToInt32(Console.ReadLine());
+            if (number > 0) return number;
+            else
+            {
+                Console.WriteLine($"Вы ввели отрицательное число. Введите положительное!\n");
+                goto link;
+            }
+        }
+
+        catch (FormatException)
+        {
+            Console.WriteLine($"Некорректный ввод. Введите целое положительное число!\n");
         }
     }
 }
@@ -210,6 +245,98 @@ int[,,] GetArray3D(int x = 4, int y = 4, int z = 4) // 60 (задание 3D м�
     return newArray3D;
 }
 
+int[,] GetSpiralArray(int size = 6) // 62 (решение лектора)
+{
+    int[,] result = new int[size, size];
+    int i = 0;
+    int j = 0;
+    int rowE = size - 1;
+    int columnE = size - 1;
+    int rowS = 0;
+    int columnS = 0;
+    bool left = true;
+    bool top = true;
+    int count = 10;
+
+    while (count - 10 < (size * size))
+    {
+        count++;
+        result[i, j] = count;
+        // идём вправо
+        if (left && top)
+        {
+            if (j == columnE)
+            {
+                rowS++;
+                top = true;
+                left = false;
+                i++;
+                continue;
+            }
+
+            else
+            {
+                j++;
+                continue;
+            }
+        }
+        // идём вниз
+        if (!left && top)
+        {
+            if (i == rowE)
+            {
+                columnE--;
+                top = false;
+                left = false;
+                j--;
+                continue;
+            }
+
+            else
+            {
+                i++;
+                continue;
+            }
+        }
+        // идём влево
+        if (!left && !top)
+        {
+            if (j == columnS)
+            {
+                rowE--;
+                top = false;
+                left = true;
+                i--;
+                continue;
+            }
+
+            else
+            {
+                j--;
+                continue;
+            }
+        }
+        //идём вверх
+        if (left && !top)
+        {
+            if (i == rowS)
+            {
+                columnS++;
+                top = true;
+                left = true;
+                j++;
+                continue;
+            }
+
+            else
+            {
+                i--;
+                continue;
+            }
+        }
+    }
+    return result;
+}
 
 void PrintArray(int[,] array) // (печать массива)
 {

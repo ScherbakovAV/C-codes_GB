@@ -290,7 +290,7 @@ int[,] SlovArr(int[,] MyArr) // 57 (зал 4)
     return slovar;
 }
 
-int FindMinInArray(int[,] array) // 59
+/* int FindMinInArray(int[,] array) // 59
 {
     int min = array[0, 0];
 
@@ -308,9 +308,9 @@ int FindMinInArray(int[,] array) // 59
     Console.WriteLine($"\nМинимальный элемент массива равен {min}");
 
     return min;
-}
+} */
 
-int EntryOfUnitInArray(int[,] array, int num) // 59
+/* int EntryOfUnitInArray(int[,] array, int num) // 59
 {
     int entry = 0;
 
@@ -328,9 +328,9 @@ int EntryOfUnitInArray(int[,] array, int num) // 59
     Console.WriteLine($"Этот элемент встречается {entry} раз\n");
 
     return entry;
-}
+} */
 
-int[,] DeleteRowsColumnsInArray(int[,] array, int number, int entry = 1) // 59
+/* int[,] DeleteRowsColumnsInArray(int[,] array, int number, int entry = 1) // 59
 {
     int[,] arrReduced = new int[array.GetLength(0) - entry, array.GetLength(1) - entry];
 
@@ -345,7 +345,7 @@ int[,] DeleteRowsColumnsInArray(int[,] array, int number, int entry = 1) // 59
         }
     }
     return arrReduced;
-}
+} */
 
 void FillTriangle() // 61
 {
